@@ -11,9 +11,9 @@ The theme is located in 'src/app/global.css'. Change the colors to your liking. 
 
 The ui is built with shadcn and tailwind
 
-## FILL next.env
+## FILL .env.local
 
-Copy the next.env.example file and rename it to next.env.local. Fill in the variables with your own values.
+Copy the .env.local.example file and rename it to .env.local. Fill in the variables with your own values.
 
 ## SET UP DB
 
