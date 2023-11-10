@@ -13,9 +13,9 @@ const Subscribe = async () => {
     getSubscription(),
   ]);
 
-  if (!session) {
-    redirect("/auth/login");
-  }
+//   if (!session) {
+//     redirect("/auth/login");
+//   }
 
   return (
     <div className="isolate overflow-hidden bg-gray-900">

@@ -49,9 +49,8 @@ const Pricing = ({ products, subscription, user, session }: Props) => {
 
   const handleCheckout = async (price: Price) => {
     setPriceIdLoading(price.id);
-    if (!user) {
-      return router.push("/auth/login");
-    }
+    if (!session || !user) router.push("/auth/login");
+
     if (subscription) {
       return router.push("/dashboard/account");
     }

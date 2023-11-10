@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import ThemeSwitch from "@/components/theme/ThemeSwitch";
 
 const navigation = [
   { name: "Product", href: "#" },
@@ -11,7 +12,11 @@ const navigation = [
   { name: "Company", href: "#" },
 ];
 
-export default function Example() {
+export default function Example({
+  themeSwitch,
+}: {
+  themeSwitch?: React.ReactNode;
+}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -31,7 +36,8 @@ export default function Example() {
               />
             </a>
           </div>
-          <div className="flex lg:hidden">
+          <div className="flex lg:hidden space-x-2">
+            {themeSwitch}
             <button
               type="button"
               className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-foreground/70"
@@ -52,7 +58,8 @@ export default function Example() {
               </a>
             ))}
           </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <div className="hidden lg:flex lg:flex-1 items-center space-x-2 lg:justify-end">
+            {themeSwitch}
             <Link
               href="/auth/login"
               className="text-sm font-semibold leading-6 text-foreground"
@@ -139,12 +146,12 @@ export default function Example() {
                 fugiat aliqua.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
-                <a
-                  href="#"
+                <Link
+                  href="/auth/signup"
                   className="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                 >
                   Get started
-                </a>
+                </Link>
                 <a
                   href="#"
                   className="text-sm font-semibold leading-6 text-foreground"
