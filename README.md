@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SUBSCRIPTION STARTER
 
-## Getting Started
+### what do you need:
 
-First, run the development server:
+- a new supabase project
+- a stripe account
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## EDIT THEME
+
+The theme is located in 'src/app/global.css'. Change the colors to your liking. (you can find more themes on shadcn website)
+
+The ui is built with shadcn and tailwind
+
+## FILL next.env
+
+Copy the next.env.example file and rename it to next.env.local. Fill in the variables with your own values.
+
+## SET UP DB
+
+To import a schema.sql file into a new Supabase project, you can follow these steps:
+
+- Create a new Supabase project from the dashboard.
+- Once the project is created, navigate to the SQL editor by clicking on the "SQL" tab in the left sidebar.
+- In the SQL editor, click on the "Import SQL" button in the top right corner.
+- Select the schema.sql file that you want to import and click "Open".
+- Review the SQL statements that will be executed and make sure they match your expectations.
+- Click on the "Import" button to execute the SQL statements and create the schema in your new Supabase project.
+
+Alternatively, you can use the Supabase CLI to import the schema.sql file. Here's how:
+
+1. Install the Supabase CLI by following the instructions in the documentation.
+
+2. Open a terminal and navigate to the directory where the schema.sql file is located.
+
+3. Run the following command to link your local repository with your Supabase project:
+
+```
+supabase link --project-ref <project-id>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Replace <project-id> with the ID of your Supabase project. You can find the project ID in the URL of your project's dashboard: https://app.supabase.io/project/<project-id>/dashboard.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. Run the following command to import the schema.sql file:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+supabase db restore <path-to-schema.sql>
+```
 
-## Learn More
+Replace <path-to-schema.sql> with the path to the schema.sql file on your local machine.
 
-To learn more about Next.js, take a look at the following resources:
+5. The supabase db restore command will execute the SQL statements in the schema.sql file and create the schema in your Supabase project.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+That's it! You should now have a new schema in your Supabase project.
