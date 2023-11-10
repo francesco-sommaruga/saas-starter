@@ -5,7 +5,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { cva } from "class-variance-authority";
 
-const messages = [
+const messages: {
+  id: number;
+  content: string;
+  createdAt: string;
+  user: "bot" | "user";
+}[] = [
   {
     id: 1,
     content: "Ciao, come posso aiutarti?",

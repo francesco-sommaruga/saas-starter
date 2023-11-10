@@ -47,7 +47,8 @@ CREATE TYPE "public"."subscription_status" AS ENUM (
     'incomplete',
     'incomplete_expired',
     'past_due',
-    'unpaid'
+    'unpaid',
+    'paused'
 );
 
 ALTER TYPE "public"."subscription_status" OWNER TO "postgres";
